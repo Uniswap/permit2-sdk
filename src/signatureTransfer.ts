@@ -18,14 +18,12 @@ export interface TokenPermissions {
 
 export interface PermitTransferFrom {
   permitted: TokenPermissions
-  spender: string
   nonce: BigNumberish
   deadline: BigNumberish
 }
 
 export interface PermitBatchTransferFrom {
   permitted: TokenPermissions[]
-  spender: string
   nonce: BigNumberish
   deadline: BigNumberish
 }
@@ -50,7 +48,6 @@ const TOKEN_PERMISSIONS = [
 const PERMIT_TRANSFER_FROM_TYPES = {
   PermitTransferFrom: [
     { name: 'permitted', type: 'TokenPermissions' },
-    { name: 'spender', type: 'address' },
     { name: 'nonce', type: 'uint256' },
     { name: 'deadline', type: 'uint256' },
   ],
@@ -60,7 +57,6 @@ const PERMIT_TRANSFER_FROM_TYPES = {
 const PERMIT_BATCH_TRANSFER_FROM_TYPES = {
   PermitBatchTransferFrom: [
     { name: 'permitted', type: 'TokenPermissions[]' },
-    { name: 'spender', type: 'address' },
     { name: 'nonce', type: 'uint256' },
     { name: 'deadline', type: 'uint256' },
   ],
@@ -71,7 +67,6 @@ function permitTransferFromWithWitnessType(witness: Witness): Record<string, Typ
   return {
     PermitWitnessTransferFrom: [
       { name: 'permitted', type: 'TokenPermissions' },
-      { name: 'spender', type: 'address' },
       { name: 'nonce', type: 'uint256' },
       { name: 'deadline', type: 'uint256' },
       { name: 'witness', type: witness.witnessTypeName },
@@ -85,7 +80,6 @@ function permitBatchTransferFromWithWitnessType(witness: Witness): Record<string
   return {
     PermitBatchWitnessTransferFrom: [
       { name: 'permitted', type: 'TokenPermissions[]' },
-      { name: 'spender', type: 'address' },
       { name: 'nonce', type: 'uint256' },
       { name: 'deadline', type: 'uint256' },
       { name: 'witness', type: witness.witnessTypeName },

@@ -11,7 +11,6 @@ describe('SignatureTransfer', () => {
               token: '0x0000000000000000000000000000000000000000',
               amount: MaxSignatureTransferAmount.toString(),
             },
-            spender: '0x0000000000000000000000000000000000000000',
             nonce: MaxUnorderedNonce.toString(),
             deadline: MaxSigDeadline.toString(),
           },
@@ -29,7 +28,6 @@ describe('SignatureTransfer', () => {
               token: '0x0000000000000000000000000000000000000000',
               amount: '0',
             },
-            spender: '0x0000000000000000000000000000000000000000',
             nonce: MaxUnorderedNonce.add(1).toString(),
             deadline: '0',
           },
@@ -47,7 +45,6 @@ describe('SignatureTransfer', () => {
               token: '0x0000000000000000000000000000000000000000',
               amount: MaxSignatureTransferAmount.add(1).toString(),
             },
-            spender: '0x0000000000000000000000000000000000000000',
             nonce: '0',
             deadline: '0',
           },
@@ -65,7 +62,6 @@ describe('SignatureTransfer', () => {
               token: '0x0000000000000000000000000000000000000000',
               amount: '0',
             },
-            spender: '0x0000000000000000000000000000000000000000',
             nonce: '0',
             deadline: MaxSigDeadline.add(1).toString(),
           },
@@ -84,14 +80,13 @@ describe('SignatureTransfer', () => {
             token: '0x0000000000000000000000000000000000000000',
             amount: '0',
           },
-          spender: '0x0000000000000000000000000000000000000000',
           nonce: '0',
           deadline: '0',
         },
         '0x0000000000000000000000000000000000000000',
         1
       )
-    ).toBe('0xb9bf9813799d7f0de28d2142b0bc80ec289d4a6a5b9f41834149df4188804dc5')
+    ).toBe('0x93d8341d5ec92a469ef737478766630bfdccfef3b43adc337bd99215dafae9a8')
   })
 
   it('non-batch, witness', () => {
@@ -102,7 +97,6 @@ describe('SignatureTransfer', () => {
             token: '0x0000000000000000000000000000000000000000',
             amount: '0',
           },
-          spender: '0x0000000000000000000000000000000000000000',
           nonce: '0',
           deadline: '0',
         },
@@ -114,7 +108,7 @@ describe('SignatureTransfer', () => {
           witness: { mock: '0x0000000000000000000000000000000000000000000000000000000000000000' },
         }
       )
-    ).toBe('0x4236a4a7b3e8e65dbb4cc758ef10dc4887e2959853fb615140d0f5e0ae7be7c9')
+    ).toBe('0x6c166b9b0d7cdd60898b3dd0ae6642fe1110ff70861b735b844fb8f8f4777b54')
   })
 
   it('batch, no witness', () => {
@@ -127,14 +121,13 @@ describe('SignatureTransfer', () => {
               amount: '0',
             },
           ],
-          spender: '0x0000000000000000000000000000000000000000',
           nonce: '0',
           deadline: '0',
         },
         '0x0000000000000000000000000000000000000000',
         1
       )
-    ).toBe('0x5ba40c5ba725fec181e4a862c717adf91682b012ad01ea99a978189106d66923')
+    ).toBe('0xd7063d4aead7aada30fab802d8e37ae6b6639faaab76d8dc143c2eaba828242f')
   })
 
   it('batch, witness', () => {
@@ -147,7 +140,6 @@ describe('SignatureTransfer', () => {
               amount: '0',
             },
           ],
-          spender: '0x0000000000000000000000000000000000000000',
           nonce: '0',
           deadline: '0',
         },
@@ -159,6 +151,6 @@ describe('SignatureTransfer', () => {
           witness: { mock: '0x0000000000000000000000000000000000000000000000000000000000000000' },
         }
       )
-    ).toBe('0xb45d605b0a4d4f16930a4f48294d94c78f34411278fd3133626cc190273e3ccf')
+    ).toBe('0x53f20f7fa80703f2dbd9fed53248baf086a304910ab8694fa40ab8359f73ed69')
   })
 })
