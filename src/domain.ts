@@ -1,4 +1,4 @@
-import { TypedDataDomain, TypedDataField } from '@ethersproject/abstract-signer'
+import { TypedDataDomain, TypedDataField } from 'ethers'
 
 const PERMIT2_DOMAIN_NAME = 'Permit2'
 

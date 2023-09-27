@@ -30,7 +30,7 @@ describe('AllowanceTransfer', () => {
               token: '0x0000000000000000000000000000000000000000',
               amount: '0',
               expiration: '0',
-              nonce: MaxOrderedNonce.add(1).toString(),
+              nonce: MaxOrderedNonce + BigInt(1).toString(),
             },
             spender: '0x0000000000000000000000000000000000000000',
             sigDeadline: '0',
@@ -47,7 +47,7 @@ describe('AllowanceTransfer', () => {
           {
             details: {
               token: '0x0000000000000000000000000000000000000000',
-              amount: MaxAllowanceTransferAmount.add(1).toString(),
+              amount: MaxAllowanceTransferAmount + BigInt(1).toString(),
               expiration: '0',
               nonce: 0,
             },
@@ -67,7 +67,7 @@ describe('AllowanceTransfer', () => {
             details: {
               token: '0x0000000000000000000000000000000000000000',
               amount: '0',
-              expiration: MaxAllowanceExpiration.add(1).toString(),
+              expiration: MaxAllowanceExpiration + BigInt(1).toString(),
               nonce: 0,
             },
             spender: '0x0000000000000000000000000000000000000000',
@@ -90,7 +90,7 @@ describe('AllowanceTransfer', () => {
               nonce: 0,
             },
             spender: '0x0000000000000000000000000000000000000000',
-            sigDeadline: MaxSigDeadline.add(1).toString(),
+            sigDeadline: MaxSigDeadline + BigInt(1).toString(),
           },
           '0x0000000000000000000000000000000000000000',
           1

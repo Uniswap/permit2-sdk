@@ -1,10 +1,8 @@
-import { BigNumber } from '@ethersproject/bignumber'
-import { Provider } from '@ethersproject/providers'
+import { Contract, Provider } from 'ethers'
 import Permit2Abi from '../../abis/Permit2.json'
-import { Contract } from '@ethersproject/contracts'
 
 export interface AllowanceData {
-  amount: BigNumber
+  amount: bigint
   nonce: number
   expiration: number
 }
@@ -20,7 +18,7 @@ export class AllowanceProvider {
     return await this.permit2.allowance(owner, token, spender)
   }
 
-  async getAllowance(token: string, owner: string, spender: string): Promise<BigNumber> {
+  async getAllowance(token: string, owner: string, spender: string): Promise<bigint> {
     return (await this.getAllowanceData(token, owner, spender)).amount
   }
 

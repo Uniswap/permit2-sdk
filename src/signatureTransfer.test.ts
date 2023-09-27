@@ -30,7 +30,7 @@ describe('SignatureTransfer', () => {
               amount: '0',
             },
             spender: '0x0000000000000000000000000000000000000000',
-            nonce: MaxUnorderedNonce.add(1).toString(),
+            nonce: MaxUnorderedNonce + BigInt(1).toString(),
             deadline: '0',
           },
           '0x0000000000000000000000000000000000000000',
@@ -45,7 +45,7 @@ describe('SignatureTransfer', () => {
           {
             permitted: {
               token: '0x0000000000000000000000000000000000000000',
-              amount: MaxSignatureTransferAmount.add(1).toString(),
+              amount: MaxSignatureTransferAmount + BigInt(1).toString(),
             },
             spender: '0x0000000000000000000000000000000000000000',
             nonce: '0',
@@ -67,7 +67,7 @@ describe('SignatureTransfer', () => {
             },
             spender: '0x0000000000000000000000000000000000000000',
             nonce: '0',
-            deadline: MaxSigDeadline.add(1).toString(),
+            deadline: MaxSigDeadline + BigInt(1).toString(),
           },
           '0x0000000000000000000000000000000000000000',
           1
