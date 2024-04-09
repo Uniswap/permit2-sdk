@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/permit2-sdk.git"
+    "url": "https://github.com/enriquebarco/permit2-sdk"
   },
   "keywords": [
     "uniswap",
