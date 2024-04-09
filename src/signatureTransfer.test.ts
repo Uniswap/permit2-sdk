@@ -9,11 +9,11 @@ describe('SignatureTransfer', () => {
           {
             permitted: {
               token: '0x0000000000000000000000000000000000000000',
-              amount: MaxSignatureTransferAmount.toString(),
+              amount: MaxSignatureTransferAmount,
             },
             spender: '0x0000000000000000000000000000000000000000',
-            nonce: MaxUnorderedNonce.toString(),
-            deadline: MaxSigDeadline.toString(),
+            nonce: MaxUnorderedNonce,
+            deadline: MaxSigDeadline,
           },
           '0x0000000000000000000000000000000000000000',
           1
@@ -27,11 +27,11 @@ describe('SignatureTransfer', () => {
           {
             permitted: {
               token: '0x0000000000000000000000000000000000000000',
-              amount: '0',
+              amount: 0n,
             },
             spender: '0x0000000000000000000000000000000000000000',
-            nonce: MaxUnorderedNonce.add(1).toString(),
-            deadline: '0',
+            nonce: MaxUnorderedNonce + 1n,
+            deadline: 0n,
           },
           '0x0000000000000000000000000000000000000000',
           1
@@ -45,11 +45,11 @@ describe('SignatureTransfer', () => {
           {
             permitted: {
               token: '0x0000000000000000000000000000000000000000',
-              amount: MaxSignatureTransferAmount.add(1).toString(),
+              amount: MaxSignatureTransferAmount + 1n,
             },
             spender: '0x0000000000000000000000000000000000000000',
-            nonce: '0',
-            deadline: '0',
+            nonce: 0n,
+            deadline: 0n,
           },
           '0x0000000000000000000000000000000000000000',
           1
@@ -63,11 +63,11 @@ describe('SignatureTransfer', () => {
           {
             permitted: {
               token: '0x0000000000000000000000000000000000000000',
-              amount: '0',
+              amount: 0n,
             },
             spender: '0x0000000000000000000000000000000000000000',
-            nonce: '0',
-            deadline: MaxSigDeadline.add(1).toString(),
+            nonce: 0n,
+            deadline: MaxSigDeadline + 1n,
           },
           '0x0000000000000000000000000000000000000000',
           1
@@ -82,11 +82,11 @@ describe('SignatureTransfer', () => {
         {
           permitted: {
             token: '0x0000000000000000000000000000000000000000',
-            amount: '0',
+            amount: 0n,
           },
           spender: '0x0000000000000000000000000000000000000000',
-          nonce: '0',
-          deadline: '0',
+          nonce: 0n,
+          deadline: 0n,
         },
         '0x0000000000000000000000000000000000000000',
         1
@@ -100,11 +100,11 @@ describe('SignatureTransfer', () => {
         {
           permitted: {
             token: '0x0000000000000000000000000000000000000000',
-            amount: '0',
+            amount: 0n,
           },
           spender: '0x0000000000000000000000000000000000000000',
-          nonce: '0',
-          deadline: '0',
+          nonce: 0n,
+          deadline: 0n,
         },
         '0x0000000000000000000000000000000000000000',
         1,
@@ -124,12 +124,12 @@ describe('SignatureTransfer', () => {
           permitted: [
             {
               token: '0x0000000000000000000000000000000000000000',
-              amount: '0',
+              amount: 0n,
             },
           ],
           spender: '0x0000000000000000000000000000000000000000',
-          nonce: '0',
-          deadline: '0',
+          nonce: 0n,
+          deadline: 0n,
         },
         '0x0000000000000000000000000000000000000000',
         1
@@ -144,12 +144,12 @@ describe('SignatureTransfer', () => {
           permitted: [
             {
               token: '0x0000000000000000000000000000000000000000',
-              amount: '0',
+              amount: 0n,
             },
           ],
           spender: '0x0000000000000000000000000000000000000000',
-          nonce: '0',
-          deadline: '0',
+          nonce: 0n,
+          deadline: 0n,
         },
         '0x0000000000000000000000000000000000000000',
         1,
