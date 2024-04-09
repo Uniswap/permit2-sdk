@@ -1,5 +1,4 @@
-import { Contract, JsonRpcProvider } from 'ethers'
-
+import { Contract, Provider } from 'ethers'
 import Permit2Abi from '../../abis/Permit2.json'
 
 export interface AllowanceData {
@@ -11,7 +10,7 @@ export interface AllowanceData {
 export class AllowanceProvider {
   private permit2: Contract
 
-  constructor(private provider: JsonRpcProvider, private permit2Address: string) {
+  constructor(private provider: Provider, private permit2Address: string) {
     this.permit2 = new Contract(this.permit2Address, Permit2Abi, this.provider)
   }
 
