@@ -47,7 +47,7 @@ describe('AllowanceTransfer', () => {
           {
             details: {
               token: '0x0000000000000000000000000000000000000000',
-              amount: MaxAllowanceTransferAmount,
+              amount: MaxAllowanceTransferAmount + 1n,
               expiration: 0n,
               nonce: 0n,
             },
