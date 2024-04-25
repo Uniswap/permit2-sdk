@@ -1,18 +1,7 @@
-# permit2-sdk
+# @uniswap/permit2-sdk - Now at `Uniswap/sdks`
 
-## Local Development
+All versions after 1.2.0 of this SDK can be found in the [SDK monorepo](https://github.com/Uniswap/sdks/tree/main/sdks/permit2-sdk)! Please file all future issues, PR’s, and discussions there.
 
-### Checkout the repo
-- `git clone --recurse-submodules https://github.com/Uniswap/permit2-sdk.git`
+### Old Issues and PR’s
 
-### Install dependencies
-- `yarn`
-
-### Run Unit Tests
-- `yarn test`
-
-### Run Forge tests
-- `yarn build`
-- `yarn interop`
-- `(cd permit2 && forge build)`
-- `forge test`
+If you have an issue or open PR that is still active on this SDK in this repository, please recreate it in the new repository. Some existing issues and PR’s may be automatically migrated by the Uniswap Labs team.
