@@ -1,9 +1,7 @@
 import invariant from 'tiny-invariant'
-import { TypedDataDomain, TypedDataField } from '@ethersproject/abstract-signer'
-import { BigNumberish } from '@ethersproject/bignumber'
-import { _TypedDataEncoder } from '@ethersproject/hash'
 import { permit2Domain } from './domain'
 import { MaxSigDeadline, MaxUnorderedNonce, MaxSignatureTransferAmount } from './constants'
+import { BigNumberish, TypedDataDomain, TypedDataEncoder, TypedDataField } from 'ethers'
 
 export interface Witness {
   witness: any
@@ -113,8 +111,8 @@ export abstract class SignatureTransfer {
     chainId: number,
     witness?: Witness
   ): PermitTransferFromData | PermitBatchTransferFromData {
-    invariant(MaxSigDeadline.gte(permit.deadline), 'SIG_DEADLINE_OUT_OF_RANGE')
-    invariant(MaxUnorderedNonce.gte(permit.nonce), 'NONCE_OUT_OF_RANGE')
+    invariant(MaxSigDeadline >= permit.deadline, 'SIG_DEADLINE_OUT_OF_RANGE')
+    invariant(MaxUnorderedNonce >= permit.nonce, 'NONCE_OUT_OF_RANGE')
 
     const domain = permit2Domain(permit2Address, chainId)
     if (isPermitTransferFrom(permit)) {
@@ -145,10 +143,10 @@ export abstract class SignatureTransfer {
     witness?: Witness
   ): string {
     const { domain, types, values } = SignatureTransfer.getPermitData(permit, permit2Address, chainId, witness)
-    return _TypedDataEncoder.hash(domain, types, values)
+    return TypedDataEncoder.hash(domain, types, values)
   }
 }
 
 function validateTokenPermissions(permissions: TokenPermissions) {
-  invariant(MaxSignatureTransferAmount.gte(permissions.amount), 'AMOUNT_OUT_OF_RANGE')
+  invariant(MaxSignatureTransferAmount >= permissions.amount, 'AMOUNT_OUT_OF_RANGE')
 }
